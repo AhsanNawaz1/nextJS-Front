@@ -1,4 +1,4 @@
-POST http://localhost:1337/auth/local
+POST https://nextjs-code.herokuapp.com/auth/local
 Content-Type: application/json
 
 {
@@ -8,12 +8,12 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:1337/users/me
+GET https://nextjs-code.herokuapp.com/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3OTk0NGE0YjQzNDAxYzAzNjAwZTJjNSIsImlhdCI6MTYzNDg0NTcwMSwiZXhwIjoxNjM3NDM3NzAxfQ.ubkgN2tXc3_1agbLCeOSS4trIGOoiWlIwqbiyRaHAFg
 
 ###
 
-POST http://localhost:1337/auth/local/register
+POST https://nextjs-code.herokuapp.com/auth/local/register
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:1337/auth/register-confirmation
+POST https://nextjs-code.herokuapp.com/auth/register-confirmation
 Content-Type: application/json
 
 {

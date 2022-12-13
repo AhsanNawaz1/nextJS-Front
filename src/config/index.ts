@@ -7,7 +7,7 @@ export const AppConfig = {
 };
 
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337';
+  process.env.NEXT_PUBLIC_API_URL || 'https://nextjs-code.herokuapp.com/';
 
 export const NEXT_URL =
   process.env.NEXT_PUBLIC_FRONTEND_URL ||
