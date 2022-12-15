@@ -148,15 +148,15 @@ function EditProfile({ profile }: any) {
           <div className='flex items-center justify-between w-11/12 border rounded w-11/12 h-10 mt-2 text-xs pl-2.5'>
             <div className="flex">
               <input id="default-radio-1" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 borderRadio bg-white border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2" />
-              <label for="default-radio-1" className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Male</label>
+              <label className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Male</label>
             </div>
             <div className="flex items-center">
               <input checked id="default-radio-2" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-white borderRadio border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2" />
-              <label for="default-radio-2" className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Female</label>
+              <label className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Female</label>
             </div>
             <div className="flex items-center pr-3">
               <input checked id="default-radio-2" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-white borderRadio border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2" />
-              <label for="default-radio-2" className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Custom</label>
+              <label className="ml-2 text-xs text-[#4E5D78] font-medium text-gray-900 dark:text-gray-300">Custom</label>
             </div>
           </div>
         </div>
