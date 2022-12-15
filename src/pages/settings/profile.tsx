@@ -39,22 +39,22 @@ const Tabbar = ({ profileUser }: any) => {
 
 
   useEffect(() => {
-    let tabsContainer = document.querySelector("#tabs");
+    let tabsContainer: any = document.querySelector("#tabs");
 
     let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
 
     console.log(tabTogglers);
 
-    tabTogglers.forEach(function (toggler) {
-      toggler.addEventListener("click", function (e) {
+    tabTogglers.forEach(function (toggler: any) {
+      toggler.addEventListener("click", function (e: any) {
         e.preventDefault();
 
-        let tabName = this.getAttribute("href");
+        let tabName: any = this.getAttribute("href");
 
         setActive(tabName)
 
 
-        let tabContents = document.querySelector("#tab-contents");
+        let tabContents: any = document.querySelector("#tab-contents");
 
         for (let i = 0; i < tabContents.children.length; i++) {
           tabTogglers[i].parentElement.classList.remove("font-bold", "-mb-px", "bg-white"); tabContents.children[i].classList.remove("hidden");
