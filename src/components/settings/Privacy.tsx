@@ -35,7 +35,7 @@ function Privacy() {
 
   return (
     <div>
-      <h1 className="text-lg font-bold text-[#4E5D78] mb-5">Where you"re logged in</h1>
+      <h1 className="text-lg font-bold text-[#4E5D78] mb-5">Where you are logged in</h1>
       <div className="grid grid-cols-2 gap-3">
         {seeAll ?
           lastActivityArr.map((post: any) => {
@@ -46,9 +46,9 @@ function Privacy() {
                     <section className="block p-2 pt-4 pb-4   bg-white rounded-lg border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                       <div className="flex">
                         <div>
-                          {post?.device?.toLowerCase().includes("windows") ? <FiMonitor className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#377DFF" }} /> :
-                            post?.device?.toLowerCase().includes("tab") ? <FiTablet className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#38CB89" }} /> :
-                              <AiOutlineMobile className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#38CB89" }} />}
+                          {post?.device?.toLowerCase().includes("windows") ? <FiMonitor className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#377DFF" }} /> :
+                            post?.device?.toLowerCase().includes("tab") ? <FiTablet className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#38CB89" }} /> :
+                              <AiOutlineMobile className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#38CB89" }} />}
                         </div>
                         <div>
                           <h5 className="text-base text-[#4E5D78] font-medium">{post?.device} • {post?.location}</h5>
@@ -70,9 +70,9 @@ function Privacy() {
                     <section className="block p-2 pt-4 pb-4  bg-white rounded-lg border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                       <div className="flex">
                         <div>
-                          {post?.device?.toLowerCase().includes("windows") ? <FiMonitor className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#377DFF" }} /> :
-                            post?.devices?.toLowerCase().includes("tab") ? <FiTablet className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#38CB89" }} /> :
-                              <AiOutlineMobile className='h-10 w-12 mt-0.5 mr-2' style={{ color: "#38CB89" }} />}
+                          {post?.device?.toLowerCase().includes("windows") ? <FiMonitor className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#377DFF" }} /> :
+                            post?.devices?.toLowerCase().includes("tab") ? <FiTablet className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#38CB89" }} /> :
+                              <AiOutlineMobile className="h-10 w-12 mt-0.5 mr-2" style={{ color: "#38CB89" }} />}
                         </div>
                         <div>
                           <h5 className="text-base text-[#4E5D78] font-medium">{post?.device} • {post?.location}</h5>
