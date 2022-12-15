@@ -49,7 +49,7 @@ const Tabbar = ({ profileUser }: any) => {
       toggler.addEventListener("click", function (e: any) {
         e.preventDefault();
 
-        let tabName: any = this.getAttribute("href");
+        let tabName: any = e.getAttribute("href");
 
         setActive(tabName)
 
