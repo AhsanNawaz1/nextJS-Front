@@ -34,7 +34,7 @@ import ActivityLog from '@/components/settings/ActivityLog';
 import ViewSharing from '@/components/settings/ViewSharing';
 
 
-const Tabbar = ({ profile }: any) => {
+const Tabbar = ({ profileUser }: any) => {
   const [active, setActive] = useState("#first");
 
 
@@ -132,7 +132,7 @@ const Tabbar = ({ profile }: any) => {
 
         <div id="tab-contents" className="w-full">
           <div id="first" className="p-4 pl-8">
-            <EditProfile profile={profile} />
+            <EditProfile profile={profileUser} />
           </div>
           <div id="second" className="hidden p-4 pl-8">
             <Language />
@@ -160,11 +160,9 @@ const Tabbar = ({ profile }: any) => {
 
 
 export default function MyProfile({ user, token, onboardingData }: any) {
-  if (!user || user?.error) return <Forbidden />;
-
-
   const { data: prof } = useSWR(`/profiles/${user.profile.slug}`, apiFetcher);
 
+  if (!user || user?.error) return <Forbidden />;
   return (
     <>
       <Layout
