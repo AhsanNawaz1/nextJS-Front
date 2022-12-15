@@ -7,10 +7,10 @@ export const AppConfig = {
 };
 
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'https://nextjs-code.herokuapp.com/';
+  process.env.NEXT_PUBLIC_API_URL || 'https://nextjs-code.herokuapp.com';
 
 export const NEXT_URL =
   process.env.NEXT_PUBLIC_FRONTEND_URL ||
   (process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000');
+    : 'https://nextjs-cofounders.netlify.app');
