@@ -26,7 +26,7 @@ const ActionCategory = [
 function ActivityLog() {
 
   const [ActivityStartDate, setActivityStartDate] = useState(new Date());
-  const [selected, setSelected] = useState(ActionCategory[0]);
+  const [selecting, setSelecting] = useState(ActionCategory[0]);
 
 
 
@@ -45,14 +45,14 @@ function ActivityLog() {
         </div>
         <div className='flex'>
           <p className='font-medium text-base text-[#4E5D78]'>Activity:</p>
-          <Listbox value={selected} onChange={setSelected}>
+          <Listbox value={selecting} onChange={setSelecting}>
             {({ open }) => (
               <>
                 <Listbox.Label className="block text-sm font-medium text-gray-700"></Listbox.Label>
                 <div className="relative">
                   <Listbox.Button className="relative w-full font-normal text-sm text-[#4E5D78] shadow-none	 cursor-default bg-white p-0 ml-0 text-left focus:border-none focus:outline-none focus:ring-1 sm:text-sm">
                     <span className="flex items-center">
-                      <span className="ml-3 block truncate">{selected?.category}</span>
+                      <span className="ml-3 block truncate">{selecting?.category}</span>
                       <img src={'/assets/images/settings/DropActivityIcon.svg'}
                         className="ml-4"
                       />
@@ -133,4 +133,4 @@ function ActivityLog() {
   )
 }
 
-export default ActivityLog
+export default ActivityLog;

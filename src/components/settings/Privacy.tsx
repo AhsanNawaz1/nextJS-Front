@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import moment from 'moment';
+import React, { useState } from "react";
+import moment from "moment";
 import { FiMonitor, FiMonitorm, FiTablet } from "react-icons/fi";
 import { AiOutlineMobile } from "react-icons/ai"
 

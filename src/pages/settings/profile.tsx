@@ -34,93 +34,6 @@ import ActivityLog from '@/components/settings/ActivityLog';
 import ViewSharing from '@/components/settings/ViewSharing';
 
 
-
-export default function MyProfile({ user, token, onboardingData }: any) {
-  if (!user || user?.error) return <Forbidden />;
-  const { data: profile } = useSWR(`/profiles/${user.profile.slug}`, apiFetcher);
-
-
-
-  return (
-    <>
-      <Layout
-        meta={
-          <Meta
-            title="Edit profile - CoFoundersLab"
-            description="Edit profile on CoFoundersLab, the leading entrepreneurial network where like-minded entrepreneurs connect, meet and collaborate."
-          />
-        }
-      >
-        <div className='flex'>
-          <LeftSideBar />
-          <div className='w-full' style={{ border: "16px solid white" }}>
-            <section className='p-10 w-full flex justify-center '>
-              <div className="overflow-hidden rounded-xl bg-white ml-5  py-4 shadow" style={{ width: "95%" }}>
-                <div className="px-0 pb-0">
-                  <div className="border-0 border-slate-100 sm:col-span-6">
-                    <Tabbar profile={profile} />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-
-
-
-
-        {/* <SettingsPage user={user}>
-
-          <ProfilePictureForm user={user} token={token} />
-          <ProfileBannerForm user={user} token={token} />
-          <ProfileInfo user={user} />
-          <ProfileSummary user={user} />
-          <ProfileDetails user={user} onboardingData={onboardingData} />
-          <ProfileSettings user={user} />
-        </SettingsPage> */}
-      </Layout>
-    </>
-  );
-}
-
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const { token } = parseCookies(req);
-  const [userRes, onboardingRes] = await Promise.all([
-    fetch(`${API_URL}/users/me`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }),
-    fetch(`${API_URL}/onboarding`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }),
-  ]);
-  const [user, onboardingData] = await Promise.all([
-    userRes.json(),
-    onboardingRes.json(),
-  ]);
-  if (!user?.error && !onboardingData?.error) {
-    return {
-      props: {
-        user,
-        token: token ? token : '',
-        onboardingData,
-      },
-    };
-  }
-
-  return {
-    redirect: {
-      destination: '/login',
-      permanent: false,
-    },
-  };
-};
-
 const Tabbar = ({ profile }: any) => {
   const [active, setActive] = useState("#first");
 
@@ -244,3 +157,91 @@ const Tabbar = ({ profile }: any) => {
     </>
   )
 }
+
+
+export default function MyProfile({ user, token, onboardingData }: any) {
+  if (!user || user?.error) return <Forbidden />;
+
+
+  const { data: prof } = useSWR(`/profiles/${user.profile.slug}`, apiFetcher);
+
+  return (
+    <>
+      <Layout
+        meta={
+          <Meta
+            title="Edit profile - CoFoundersLab"
+            description="Edit profile on CoFoundersLab, the leading entrepreneurial network where like-minded entrepreneurs connect, meet and collaborate."
+          />
+        }
+      >
+        <div className='flex'>
+          <LeftSideBar />
+          <div className='w-full' style={{ border: "16px solid white" }}>
+            <section className='p-10 w-full flex justify-center '>
+              <div className="overflow-hidden rounded-xl bg-white ml-5  py-4 shadow" style={{ width: "95%" }}>
+                <div className="px-0 pb-0">
+                  <div className="border-0 border-slate-100 sm:col-span-6">
+                    <Tabbar profile={prof} />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+
+
+        {/* <SettingsPage user={user}>
+
+          <ProfilePictureForm user={user} token={token} />
+          <ProfileBannerForm user={user} token={token} />
+          <ProfileInfo user={user} />
+          <ProfileSummary user={user} />
+          <ProfileDetails user={user} onboardingData={onboardingData} />
+          <ProfileSettings user={user} />
+        </SettingsPage> */}
+      </Layout>
+    </>
+  );
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const { token } = parseCookies(req);
+  const [userRes, onboardingRes] = await Promise.all([
+    fetch(`${API_URL}/users/me`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+    fetch(`${API_URL}/onboarding`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+  ]);
+  const [user, onboardingData] = await Promise.all([
+    userRes.json(),
+    onboardingRes.json(),
+  ]);
+  if (!user?.error && !onboardingData?.error) {
+    return {
+      props: {
+        user,
+        token: token ? token : '',
+        onboardingData,
+      },
+    };
+  }
+
+  return {
+    redirect: {
+      destination: '/login',
+      permanent: false,
+    },
+  };
+};
+
