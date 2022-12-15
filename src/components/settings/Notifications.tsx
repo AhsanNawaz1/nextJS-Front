@@ -11,7 +11,7 @@ function Notifications() {
     Event: true
   })
 
-  const handleFlagChange = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
+  const handleFlagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let name: string = e.target.name;
     let obj: any = { ...NotisFlags };
     obj[name] = !(obj[name]);
@@ -31,7 +31,7 @@ function Notifications() {
               <span className="font-medium text-[#4E5D78] text-sm" style={{ lineHeight: "22px" }}>Like</span>
             </div>
             <label className="inline-flex relative items-center cursor-pointer">
-              <input type="checkbox" value="" id="checked-toggle" className="sr-only peer" name="Like" onChange={(e) => handleFlagChange(e)} checked={NotisFlags.Like} />
+              <input type="checkbox" value="" id="checked-toggle" className="sr-only peer" name="Like" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFlagChange(e)} checked={NotisFlags.Like} />
               <div className="w-11 h-6 rounded-full peer dark:bg-white-700 border peer-checked:after:translate-x-full peer-checked:after:border-white peer-checked:after:bg-white peer-checked:after:border-none after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
             </label>
           </div>
