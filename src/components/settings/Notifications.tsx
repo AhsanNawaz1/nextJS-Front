@@ -11,9 +11,9 @@ function Notifications() {
     Event: true
   })
 
-  const handleFlagChange = (e: object) => {
+  const handleFlagChange = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
     let name: string = e.target.name;
-    let obj: object = { ...NotisFlags };
+    let obj: any = { ...NotisFlags };
     obj[name] = !(obj[name]);
     setNotisFlags(obj);
   }
