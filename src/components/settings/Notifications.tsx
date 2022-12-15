@@ -10,10 +10,10 @@ function Notifications() {
     Follow: false,
     Event: true
   })
-  
-  const handleFlagChange = (e: any) => {
-    let name: any = e.target.name;
-    let obj = { ...NotisFlags };
+
+  const handleFlagChange = (e: object) => {
+    let name: string = e.target.name;
+    let obj: object = { ...NotisFlags };
     obj[name] = !(obj[name]);
     setNotisFlags(obj);
   }
