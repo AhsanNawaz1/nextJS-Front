@@ -589,7 +589,7 @@ export default function Header(props: IHeaderProps) {
       )}
 
       <div className=" w-full mx-auto ml-0 ">
-        <div className="flex h-14 items-center justify-between py-5 sm:h-16 md:justify-start md:space-x-10">
+        <div className="flex h-14 items-center justify-between py-5 sm:h-16 md:justify-start md:space-x-10" style={{ width: "95%", margin: "0 auto" }}>
           <div className="flex justify-start xl:w-0 xl:flex-1">
             <Link href="/">
               <span className="sr-only">CoFoundersLab</span>
