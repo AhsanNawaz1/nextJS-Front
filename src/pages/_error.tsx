@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/nextjs';
+// import * as Sentry from '@sentry/nextjs';
 import { NextPageContext } from 'next';
 import NextErrorComponent, { ErrorProps as NextErrorProps } from 'next/error';
 // import envs from 'helpers/envs';
@@ -25,9 +25,9 @@ const ErrorPage = (props: ErrorPageProps): JSX.Element => {
     console.error(err);
   }
 
-  if (!isReadyToRender && err) {
-    Sentry.captureException(err);
-  }
+  // if (!isReadyToRender && err) {
+  //   Sentry.captureException(err);
+  // }
 
   return <>{children ?? <NextErrorComponent statusCode={statusCode} />}</>;
 };
@@ -56,16 +56,16 @@ ErrorPage.getInitialProps = async (
     return { statusCode: 404, isReadyToRender: true };
   }
 
-  if (err) {
-    Sentry.captureException(err);
-    await Sentry.flush(2000);
-    return errorInitialProps;
-  }
+  // if (err) {
+  //   Sentry.captureException(err);
+  //   await Sentry.flush(2000);
+  //   return errorInitialProps;
+  // }
 
-  Sentry.captureException(
-    new Error(`_error.js getInitialProps missing data at path: ${asPath}`)
-  );
-  await Sentry.flush(2000);
+  // Sentry.captureException(
+  //   new Error(`_error.js getInitialProps missing data at path: ${asPath}`)
+  // );
+  // await Sentry.flush(2000);
 
   return errorInitialProps;
 };
