@@ -612,13 +612,13 @@ export default function Header(props: IHeaderProps) {
             </Popover.Button>
           </div>
 
-          <div className="relative w-1/3">
+          {/* <div className="relative w-1/3" >
             <input
               className="mr-3 w-full rounded-lg border border-slate-300 py-2 pl-10 text-base"
               placeholder="Search for CoFounders here..."
             />
             <SearchIcon className="absolute top-3 left-3 h-5" />
-          </div>
+          </div> */}
 
           <Popover.Group as="nav" className="hidden space-x-10 md:flex">
             {loading || loggedOut
