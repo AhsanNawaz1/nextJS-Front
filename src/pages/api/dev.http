@@ -1,4 +1,4 @@
-POST https://nextjs-code.herokuapp.com/auth/local
+POST https://nextjs-front.netlify.app/auth/local
 Content-Type: application/json
 
 {
@@ -8,12 +8,12 @@ Content-Type: application/json
 
 ###
 
-GET https://nextjs-code.herokuapp.com/users/me
+GET https://nextjs-front.netlify.app/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3OTk0NGE0YjQzNDAxYzAzNjAwZTJjNSIsImlhdCI6MTYzNDg0NTcwMSwiZXhwIjoxNjM3NDM3NzAxfQ.ubkgN2tXc3_1agbLCeOSS4trIGOoiWlIwqbiyRaHAFg
 
 ###
 
-POST https://nextjs-code.herokuapp.com/auth/local/register
+POST https://nextjs-front.netlify.app/auth/local/register
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-POST https://nextjs-code.herokuapp.com/auth/register-confirmation
+POST https://nextjs-front.netlify.app/auth/register-confirmation
 Content-Type: application/json
 
 {
